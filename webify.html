@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Single Page Website</title>
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(15, 23, 42, 0.9);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      color: #38bdf8;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      margin-left: 30px;
+      color: #e5e7eb;
+      text-decoration: none;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: #38bdf8;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero span {
+      color: #38bdf8;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: auto;
+      opacity: 0.85;
+    }
+
+    .hero button {
+      margin-top: 30px;
+      padding: 15px 40px;
+      font-size: 1rem;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      border: none;
+      border-radius: 30px;
+      color: #0f172a;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .hero button:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
+    }
+
+    /* CARDS SECTION */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 80px 60px;
+    }
+
+    .card {
+      background: #020617;
+      padding: 30px;
+      border-radius: 15px;
+      transition: transform 0.4s, box-shadow 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(56,189,248,0.3), transparent);
+      transform: translateX(-100%);
+      transition: 0.6s;
+    }
+
+    .card:hover::before {
+      transform: translateX(100%);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+
+    .card h3 {
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #020617;
+      opacity: 0.8;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>MyWeb</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Features</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h2>Build <span>Modern Websites</span><br>With Pure HTML & CSS</h2>
+      <p>
+        A simple single-page design with hover effects, animations,
+        and responsive layout — no JavaScript required.
+      </p>
+      <button>Get Started</button>
+    </div>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <h3>Fast</h3>
+      <p>Optimized layout and lightweight styling for quick loading.</p>
+    </div>
+    <div class="card">
+      <h3>Responsive</h3>
+      <p>Adapts smoothly to mobile, tablet, and desktop screens.</p>
+    </div>
+    <div class="card">
+      <h3>Animated</h3>
+      <p>Hover effects and transitions bring the UI to life.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Single Page HTML & CSS Demo
+  </footer>
+
+</body>
+</html>
